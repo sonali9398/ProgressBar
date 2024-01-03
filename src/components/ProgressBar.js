@@ -10,7 +10,7 @@ const ProgressBar = () => {
 
     const handleClick = () =>{
         if(percentage < 100) {
-            setPercentage(percentage + 10);
+            setPercentage((percentage + 10));
         }
     }
 
