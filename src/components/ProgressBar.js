@@ -1,31 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
+import React, { useState } from 'react'
 
 const ProgressBar = () => {
-    const [percentage, setPercentage] = useState(0);
-
-    const handleReset = () =>{
-        setPercentage(0);
+    const [value, setValue] = useState(0);
+    const handleReset = () => {
+        setValue(0)
     }
-
     const handleClick = () =>{
-        if(percentage < 100) {
-            setPercentage((percentage + 10));
+        if(value < 100){
+            setValue((val) => val + 10);
         }
     }
-
-    return(
+  return (
+    <div>
         <div className='progress'>
-            
-
-            <div>{percentage}%</div>
-            
-            <button onClick={handleReset}>Reset</button>
-            <button onClick={handleClick}>Click</button>
-
 
         </div>
-    )
+        <span>{value}%</span>
+        <div style={{width:`${value}`}}/>
+
+        <button onClick={handleReset}>Reset</button>
+        <button onClick={handleClick}>Click</button>
+    </div>
+  )
 }
 
 export default ProgressBar

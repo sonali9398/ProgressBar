@@ -7,9 +7,10 @@ function App() {
 
   useEffect(() =>{
     setInterval(() =>{
-      setValue((val) => val+1)
-    }, 100)
-  }, [])
+      setValue((val) => val + 1);
+    }, 100);
+  }, []);
+
   return(
     <div className='App'>
         <h1>ProgressBar</h1>
